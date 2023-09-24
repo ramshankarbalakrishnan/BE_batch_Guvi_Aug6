@@ -68,3 +68,13 @@ SELECT
 FROM
     members m
 CROSS JOIN committees c;
+
+#---full = left table + right table ; regarless of join keys. 
+
+select * from members 
+left outer join committees 
+on member_id = committee_id
+union 
+select * from members 
+right outer join committees 
+on member_id = committee_id;
